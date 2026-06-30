@@ -1,0 +1,295 @@
+// ----- Article card (index) -----
+.article
+  margin: 0 0 block-margin 0
+
+.article-inner
+  @extend $block
+  padding: article-padding
+  transition: box-shadow 0.2s
+  &:hover
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04)
+
+.article-meta
+  display: none
+
+.article-header
+  margin-bottom: 8px
+
+.article-title
+  text-decoration: none
+  font-size: 24px
+  font-weight: 700
+  color: #1a1a1c
+  line-height: 1.3
+  letter-spacing: -0.3px
+  display: block
+  &:hover
+    opacity: 0.6
+
+.article-entry
+  @extend $base-style
+  clearfix()
+  color: color-default
+  p, table
+    line-height: line-height
+    margin: line-height 0
+  h1, h2, h3, h4, h5, h6
+    font-weight: 600
+    color: #1a1a1c
+  h1, h2, h3, h4, h5, h6
+    line-height: line-height-title
+    margin: 1.2em 0 0.6em
+  a
+    color: #1a1a1c
+    text-decoration: underline
+    text-underline-offset: 3px
+    &:hover
+      opacity: 0.6
+  ul, ol, dl
+    margin-top: 0.6em
+    margin-bottom: 0.6em
+  img, video
+    max-width: 100%
+    height: auto
+    display: block
+    margin: 1.5em auto
+    border-radius: 8px
+  iframe
+    border: none
+    border-radius: 8px
+  table
+    width: 100%
+    border-collapse: collapse
+    border-spacing: 0
+    font-size: 15px
+  th
+    font-weight: 600
+    border-bottom: 2px solid #e5e5e7
+    padding-bottom: 0.5em
+  td
+    border-bottom: 1px solid #e5e5e7
+    padding: 10px 0
+  blockquote
+    margin: 1.5em 0
+    padding: 16px 24px
+    border-left: 3px solid #d5d5d8
+    background: #f5f5f5
+    border-radius: 0 8px 8px 0
+    color: #6e6e73
+    p
+      margin: 0.5em 0
+    footer
+      font-size: 15px
+      margin: 0.8em 0 0
+      font-family: font-sans
+      cite
+        &:before
+          content: "—"
+          padding: 0 0.5em
+  .pullquote
+    text-align: left
+    width: 45%
+    margin: 0
+    &.left
+      margin-left: 0.5em
+      margin-right: 1em
+    &.right
+      margin-right: 0.5em
+      margin-left: 1em
+  .caption
+    color: color-grey
+    display: block
+    font-size: 0.9em
+    margin-top: 0.5em
+    text-align: center
+  .video-container
+    position: relative
+    padding-top: (9 / 16 * 100)%
+    height: 0
+    overflow: hidden
+    iframe, object, embed
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      margin-top: 0
+
+.article-date
+  color: #6e6e73
+  font-size: 16px
+  display: block
+
+.article-more-link a
+  display: inline-block
+  padding: 8px 20px
+  border-radius: 8px
+  background: #f5f5f5
+  color: #1a1a1c
+  text-decoration: none
+  font-size: 15px
+  transition: background 0.15s
+  &:hover
+    background: #e8e8ea
+    text-decoration: none
+
+.article-footer
+  clearfix()
+  font-size: 15px
+  line-height: 1.6
+  border-top: 1px solid #e5e5e7
+  padding-top: 16px
+  margin-top: 20px
+  a
+    color: #6e6e73
+    text-decoration: none
+    &:hover
+      color: #1a1a1c
+
+.article-tag-list-item
+  float: left
+  margin-right: 12px
+
+.article-tag-list-link
+  color: #1a1a1c
+  &:before
+    content: "#"
+
+.article-comment-link
+  float: right
+  &:before
+    padding-right: 6px
+
+.article-share-link
+  cursor: pointer
+  float: right
+  margin-left: 20px
+
+// ----- Post nav -----
+#article-nav
+  clearfix()
+  margin: block-margin 0
+
+.article-nav-link-wrap
+  text-decoration: none
+  color: #6e6e73
+  margin-top: 20px
+  display: block
+  &:hover
+    color: #1a1a1c
+  @media mq-normal
+    width: 50%
+    margin-top: 0
+
+#article-nav-newer
+  @media mq-normal
+    float: left
+    text-align: left
+
+#article-nav-older
+  @media mq-normal
+    float: right
+    text-align: right
+
+.article-nav-caption
+  text-transform: uppercase
+  letter-spacing: 1px
+  color: #6e6e73
+  font-size: 13px
+  font-weight: 500
+
+.article-nav-title
+  font-size: 16px
+  line-height: 1.5
+  margin-top: 4px
+
+// ----- Share box -----
+.article-share-box
+  position: absolute
+  display: none
+  background: #fff
+  border: 1px solid #e5e5e7
+  border-radius: 8px
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08)
+  overflow: hidden
+  z-index: 1
+  &.on
+    display: block
+
+.article-share-input
+  width: 100%
+  background: none
+  box-sizing: border-box
+  font: 14px font-sans
+  padding: 0 15px
+  color: #1a1a1c
+  outline: none
+  border: 1px solid #e5e5e7
+  border-radius: 8px 8px 0 0
+  height: 36px
+  line-height: 36px
+
+.article-share-links
+  clearfix()
+  background: #f8f8f8
+
+$article-share-link
+  width: 50px
+  height: 36px
+  display: block
+  float: left
+  position: relative
+  color: #6e6e73
+  .fa
+    font-size: 20px
+    absolute-center(@font-size)
+    text-align: center
+  &:hover
+    color: #fff
+
+.article-share-twitter
+  @extend $article-share-link
+  &:hover
+    background: color-twitter
+
+.article-share-facebook
+  @extend $article-share-link
+  &:hover
+    background: color-facebook
+
+.article-share-pinterest
+  @extend $article-share-link
+  &:hover
+    background: color-pinterest
+
+.article-share-linkedin
+  @extend $article-share-link
+  &:hover
+    background: color-linkedin
+
+// ----- Gallery -----
+.article-gallery
+  background: #000
+  position: relative
+
+.article-gallery-photos
+  position: relative
+  overflow: hidden
+
+.article-gallery-img
+  display: none
+  max-width: 100%
+  &:first-child
+    display: block
+  &.loaded
+    position: absolute
+    display: block
+  img
+    display: block
+    max-width: 100%
+    margin: 0 auto
+
+// ----- Desktop -----
+@media mq-normal
+  .article-title
+    font-size: 28px

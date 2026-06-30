@@ -1,0 +1,20 @@
+<header id="header">
+  <div id="header-inner">
+    <a href="<%- url_for() %>" id="site-name"><%= config.title || 'MOSS' %></a>
+    <nav id="main-nav">
+      <% for (var i in theme.menu){ %>
+        <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+      <% } %>
+    </nav>
+    <label id="nav-toggle" for="nav-check">
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+</header>
+<input type="checkbox" id="nav-check" style="display:none">
+<div id="mobile-dropdown">
+  <% for (var i in theme.menu){ %>
+    <a href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+  <% } %>
+</div>

@@ -1,0 +1,124 @@
+highlight-background = #f5f5f5
+highlight-foreground = #1a1a1c
+highlight-comment = #8b949e
+highlight-red = #d73a49
+highlight-orange = #e36209
+highlight-yellow = #d4a72c
+highlight-green = #28a745
+highlight-aqua = #0896b5
+highlight-blue = #0366d6
+highlight-purple = #6f42c1
+
+$code-block
+  background: #f5f5f5
+  margin: 0
+  padding: 20px 24px
+  border: 1px solid #e5e5e7
+  border-radius: 10px
+  overflow: auto
+  color: highlight-foreground
+  line-height: 1.6
+  font-size: 14px
+
+$line-numbers
+  color: #aaa
+  font-size: 0.85em
+
+.article-entry
+  pre, code
+    font-family: font-mono
+  code
+    background: #f0f0f0
+    padding: 2px 6px
+    border-radius: 4px
+    color: #1a1a1c
+    font-size: 0.9em
+  pre
+    @extend $code-block
+    code
+      background: none
+      padding: 0
+      font-size: 14px
+  .highlight
+    @extend $code-block
+    pre
+      border: none
+      margin: 0
+      padding: 0
+    table
+      margin: 0
+      width: auto
+    td
+      border: none
+      padding: 0
+    figcaption
+      clearfix()
+      font-size: 0.85em
+      color: highlight-comment
+      line-height: 1em
+      margin-bottom: 1em
+      a
+        float: right
+    .gutter pre
+      @extend $line-numbers
+      text-align: right
+      padding-right: 20px
+    .line
+      height: 1.6em
+    .line.marked
+      background: #e8e8ea
+  .gist
+    margin: 0
+    border: 1px solid #e5e5e7
+    border-radius: 10px
+    background: highlight-background
+    padding: 20px 24px
+    .gist-file
+      border: none
+      font-family: font-mono
+      margin: 0
+      .gist-data
+        background: none
+        border: none
+        .line-numbers
+          @extend $line-numbers
+          background: none
+          border: none
+          padding: 0 20px 0 0
+        .line-data
+          padding: 0 !important
+      .highlight
+        margin: 0
+        padding: 0
+        border: none
+      .gist-meta
+        background: none
+        color: highlight-comment
+        font: 0.85em font-sans
+        padding: 0
+        margin-top: 1em
+        a
+          color: color-link
+          font-weight: normal
+
+// Syntax colors
+pre
+  .comment, .title
+    color: highlight-comment
+  .variable, .attribute, .tag, .regexp, .ruby .constant,
+  .xml .tag .title, .xml .pi, .xml .doctype, .html .doctype,
+  .css .id, .css .class, .css .pseudo
+    color: highlight-red
+  .number, .preprocessor, .built_in, .literal, .params, .constant
+    color: highlight-orange
+  .class, .ruby .class .title, .css .rules .attribute
+    color: highlight-green
+  .string, .value, .inheritance, .header, .ruby .symbol, .xml .cdata
+    color: highlight-green
+  .css .hexcolor
+    color: highlight-aqua
+  .function, .python .decorator, .python .title, .ruby .function .title,
+  .ruby .title .keyword, .perl .sub, .javascript .title, .coffeescript .title
+    color: highlight-blue
+  .keyword, .javascript .function
+    color: highlight-purple

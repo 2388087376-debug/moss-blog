@@ -3,7 +3,6 @@
     <% if (post.link || post.title){ %>
       <header class="article-header">
         <%- partial('post/title', {class_name: 'p-name article-title'}) %>
-        <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
       </header>
     <% } %>
     <% if (!index){ %>
@@ -11,7 +10,6 @@
       <%- post.content %>
     </div>
     <footer class="article-footer">
-      <span class="article-date"><%- partial('post/date', {class_name: 'article-date', date_format: null}) %></span>
       <%- partial('post/tag') %>
     </footer>
     <% } %>

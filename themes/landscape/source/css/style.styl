@@ -18,23 +18,12 @@ html
 body
   overflow-x: hidden
   min-height: 100vh
+  background: url('/images/bg-page.jpg') center/cover no-repeat scroll
   font: font-size font-sans
   color: color-default
   -webkit-text-size-adjust: 100%
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-
-// Background image as pseudo-element - pure decoration, no layout impact
-body::before
-  content: ""
-  position: fixed
-  inset: 0
-  background-image: url('/images/bg-page.jpg')
-  background-size: cover
-  background-position: center
-  background-repeat: no-repeat
-  z-index: -1
-  pointer-events: none
 
 .outer
   max-width: content-max-width
@@ -73,12 +62,10 @@ body::before
   width: 100%
   box-sizing: border-box
 
-// mobile: low-opacity bg for readability
+// mobile: subtle bg with white overlay for readability
 @media mq-mobile
-  body::before
-    opacity: 0.25
-    background-size: cover
-    background-position: center top
+  body
+    background: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), url('/images/bg-page.jpg') center top/cover no-repeat scroll
 
 @import "_extend"
 @import "_partial/header"

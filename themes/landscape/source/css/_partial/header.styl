@@ -1,17 +1,18 @@
-// ----- Mobile-first header -----
+// ----- Header (mobile-first) -----
 #header
-  padding: 32px 0 48px 0
+  padding: 24px 0 48px 0
 
 #header-inner
   display: flex
-  align-items: baseline
+  align-items: center
   justify-content: space-between
   max-width: content-max-width
   margin: 0 auto
   padding: 0 mobile-padding
+  box-sizing: border-box
 
 #site-name
-  font-size: 28px
+  font-size: 24px
   font-weight: 700
   color: #1a1a1c
   text-decoration: none
@@ -19,7 +20,7 @@
   line-height: 1
 
 #main-nav
-  display: none  // hidden on mobile
+  display: none
 
 .main-nav-link
   text-decoration: none
@@ -30,13 +31,14 @@
   &:hover
     color: #1a1a1c
 
-// Hamburger
+// ----- Hamburger -----
 #nav-toggle
   display: flex
   flex-direction: column
   gap: 5px
   cursor: pointer
   padding: 4px 0
+  z-index: 101
   span
     display: block
     width: 20px
@@ -44,19 +46,19 @@
     background: #1a1a1c
     border-radius: 1px
 
-// Dropdown
+// ----- Mobile dropdown -----
 #mobile-dropdown
   display: none
-  position: absolute
-  top: 72px
+  position: fixed
+  top: 56px
   right: mobile-padding
   background: #fff
   border: 1px solid #e5e5e7
   border-radius: 14px
   padding: 8px 0
-  z-index: 100
+  z-index: 200
   min-width: 160px
-  box-shadow: 0 4px 24px rgba(0,0,0,0.06)
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08)
   a
     display: block
     padding: 12px 24px
@@ -74,6 +76,9 @@
   #header
     padding: 48px 0 64px 0
 
+  #header-inner
+    align-items: baseline
+
   #site-name
     font-size: 42px
 
@@ -83,3 +88,6 @@
 
   #nav-toggle
     display: none
+
+  #mobile-dropdown
+    display: none !important
